@@ -1,6 +1,6 @@
 {
   "nginxFolder":"c:\\nginx",
-  "domainName":"autologin.deemwar.com",
-  "staticDomainPath":"c:\\nginx\\www\\autologin.deemwar.com",
+  "domainName":"sd.sd.com",
+  "staticDomainPath":"c:\\nginx\\www\\sd.sd.com",
   "useSSL":true
 }

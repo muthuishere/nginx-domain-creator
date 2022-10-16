@@ -32,6 +32,26 @@ async function readFile(filename) {
 
 
 }
+async function deleteFile(filename) {
+
+    return new Promise((resolve, reject) => {
+
+
+        try {
+            fs.rmSync(filename, {
+                force: true,
+            });
+
+        }catch (e) {
+            reject(e);
+        }
+
+
+
+    });
+
+
+}
 async function createFolder(path) {
 
     return new Promise((resolve, reject) => {

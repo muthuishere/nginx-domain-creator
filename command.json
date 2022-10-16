@@ -1,6 +1,6 @@
 {
   "nginxFolder":"/etc/nginx",
-  "domainName":"autologin.deemwar.com",
-  "staticDomainPath":"/var/www/autologin.deemwar.com",
+  "domainName":"sd.sd.com",
+  "staticDomainPath":"/var/www/sd.ds.com",
   "useSSL":true
 }

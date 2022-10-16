@@ -26,8 +26,39 @@ async function createStaticSite({nginxFolder, domainName, staticDomainPath, useS
     await writeFile(siteAvailableFolder, configFileContents)
 
 
-    //ln -s /etc/nginx/sites-available/{YOUR_DOMAIN.com}.conf
-   // await createSymbolicLink(siteAvailableFolder, siteEnabledLink)
+    await createSymbolicLink(siteEnabledLink,siteAvailableFolder)
+
+
+    await restartNginx();
+
+    if(useSSL){
+        await enableSSL(domainName);
+    }
+
+}
+
+
+async function deleteSite({nginxFolder, domainName, staticDomainPath}) {
+
+    const nginxSitesAvailableFolder = nginxFolder + Path.sep+ 'sites-available'
+    const nginxSitesEnabledFolder = nginxFolder + Path.sep+ 'sites-enabled'
+    let siteAvailableFolder = path.join(nginxSitesAvailableFolder, domainName + '.conf');
+    let siteEnabledLink = path.join(nginxSitesEnabledFolder, domainName + '.conf');
+
+
+    //Delete enabled link
+    //Delete available file
+    //Delete staticDomainPath
+
+    //restart nginx
+    await createFolder(staticDomainPath)
+
+
+    // create ConfigFile
+    const configFileContents = await parseStaticConfig({domainName, staticDomainPath})
+    await writeFile(siteAvailableFolder, configFileContents)
+
+
     await createSymbolicLink(siteEnabledLink,siteAvailableFolder)
 
 
