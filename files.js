@@ -44,7 +44,7 @@ async function createFolder(path) {
             if (err) {
                 reject(err) ;
             }
-            resolve(data);
+            resolve();
         });
 
 

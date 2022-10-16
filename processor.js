@@ -1,4 +1,5 @@
-const {spawn} = require('node:child_process');
+// const {spawn} = require('node:child_process');
+const { spawn } = require('child_process')
 const isWin = process.platform === "win32";
 
 function getDefaultNginxFolder() {
